@@ -138,8 +138,8 @@
       <div class="content has-text-justified">
         <p>
           Radiance Fields (RFs) have emerged as a crucial technology for 3D scene representation, enabling the synthesis of novel views with remarkable realism. However, as RFs become more widely used, the need for effective editing techniques that maintain coherence across different perspectives becomes evident. Current methods primarily depend on per-frame 2D image inpainting, which often fails to maintain consistency across views, thus compromising the realism of edited RF scenes.
-In this work, we introduce a novel RF editing pipeline that significantly enhances consistency by requiring the inpainting of only a single reference image. This image is then projected across multiple views using a depth-based approach, effectively reducing the inconsistencies observed with per-frame inpainting. However, projections typically assume photometric consistency across views, which is often impractical in real-world settings. To accommodate realistic variations in lighting and viewpoint, our pipeline adjusts the appearance of the projected views by generating multiple directional variants of the inpainted image, thereby adapting to different photometric conditions.
-Additionally, we present an effective and robust multi-view object segmentation approach as a valuable byproduct of our pipeline. Extensive experiments demonstrate that our method significantly surpasses existing frameworks in maintaining content consistency across views and enhancing visual quality.
+          In this work, we introduce a novel RF editing pipeline that significantly enhances consistency by requiring the inpainting of only a single reference image. This image is then projected across multiple views using a depth-based approach, effectively reducing the inconsistencies observed with per-frame inpainting. However, projections typically assume photometric consistency across views, which is often impractical in real-world settings. To accommodate realistic variations in lighting and viewpoint, our pipeline adjusts the appearance of the projected views by generating multiple directional variants of the inpainted image, thereby adapting to different photometric conditions.
+          Additionally, we present an effective and robust multi-view object segmentation approach as a valuable byproduct of our pipeline. Extensive experiments demonstrate that our method significantly surpasses existing frameworks in maintaining content consistency across views and enhancing visual quality.
         </p>
     </div>
   </div>
@@ -147,7 +147,7 @@ Additionally, we present an effective and robust multi-view object segmentation 
 <!-- End teaser image -->
 
 <!-- pipeline overview -->
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -163,8 +163,25 @@ Additionally, we present an effective and robust multi-view object segmentation 
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End pipeline overview -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Inpainting Pipeline</h2>
+      </div>
+      <div class="item">
+        <img src="static/images/framework.png" alt="MY ALT TEXT"/>
+      </div>
+      <div class="content has-text-justified">
+        <p>
+          An overview of our proposed pipeline. We initiate our methodology by selecting a reference camera pose from the training dataset; this camera pose is identified as having the minimal average distance to all other poses on the SE(3) manifold. The processing of the chosen reference view involves three key steps: masking, inpainting, and depth estimation, yielding three outputs: the mask, the inpainted image, and the depth map, respectively. These outputs are then used for multi-view projection, yielding a set of inpainted images from multiple views. Finally, an inpainted Radiance Field will be trained using these inpainted images.
+        </p>
+    </div>
+  </div>
+</section>
 
 
 <!-- Image carousel -->
